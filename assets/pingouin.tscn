@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxqp780mlsrhu"]
+
+[ext_resource type="Script" uid="uid://csu6sb4fv2oqi" path="res://assets/pingouin.gd" id="1_bu78e"]
+[ext_resource type="Texture2D" uid="uid://bhnseo3pih0fp" path="res://pingouin/PINGUIN_DROITE-PISTOLET-1.png.png" id="2_mbuot"]
+[ext_resource type="Texture2D" uid="uid://cggmigfe7mh4o" path="res://pingouin/MATTHEW WALK 3.png" id="3_5amix"]
+[ext_resource type="Texture2D" uid="uid://bgp0rqvmv1gta" path="res://pingouin/pinguin_marche1 (1).png" id="3_h66u0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myj11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mbuot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h66u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5amix")
+}],
+"loop": true,
+"name": &"marche",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu78e"]
+size = Vector2(21, 38)
+
+[node name="Pingouin" type="CharacterBody2D" groups=["joueur"]]
+script = ExtResource("1_bu78e")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -27)
+sprite_frames = SubResource("SpriteFrames_myj11")
+animation = &"marche"
+frame_progress = 0.6781786
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -23)
+shape = SubResource("RectangleShape2D_bu78e")
+
+[node name="Camera2D" type="Camera2D" parent="."]

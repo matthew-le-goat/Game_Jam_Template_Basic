@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://chk4mslv8qq8m"]
+
+[ext_resource type="PackedScene" uid="uid://dkykr3htly062" path="res://assets/map.tscn" id="1_0uhqp"]
+[ext_resource type="PackedScene" uid="uid://cxqp780mlsrhu" path="res://assets/pingouin.tscn" id="2_peue8"]
+[ext_resource type="PackedScene" uid="uid://cm1ay0w77j4dj" path="res://assets/ice_bot.tscn" id="3_jkf0i"]
+
+[node name="Monde" type="Node2D"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_0uhqp")]
+
+[node name="Pingouin" parent="." instance=ExtResource("2_peue8")]
+position = Vector2(1001, 239)
+
+[node name="Ice_BOT" parent="." instance=ExtResource("3_jkf0i")]
+position = Vector2(1773, 692)
