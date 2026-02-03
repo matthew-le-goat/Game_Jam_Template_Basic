@@ -1,0 +1,102 @@
+[gd_scene load_steps=16 format=3 uid="uid://c1uo7kt712qpl"]
+
+[ext_resource type="Script" uid="uid://j2xenhm6b3s4" path="res://assets/maga_fan.gd" id="1_qfcwe"]
+[ext_resource type="Texture2D" uid="uid://77rb66qyk66n" path="res://maga_fan/MACHANT_5FRAMES.png" id="1_yd2wi"]
+[ext_resource type="Texture2D" uid="uid://coximqyshgt1v" path="res://maga_fan/MACHANT_5FRAMES_GAUCHE.png" id="3_bhlgq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfcwe"]
+atlas = ExtResource("1_yd2wi")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhlgq"]
+atlas = ExtResource("1_yd2wi")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2r58"]
+atlas = ExtResource("1_yd2wi")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdhki"]
+atlas = ExtResource("1_yd2wi")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml0ek"]
+atlas = ExtResource("1_yd2wi")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j81l"]
+atlas = ExtResource("3_bhlgq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmiaq"]
+atlas = ExtResource("3_bhlgq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg5f4"]
+atlas = ExtResource("3_bhlgq")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cturx"]
+atlas = ExtResource("3_bhlgq")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ivjp"]
+atlas = ExtResource("3_bhlgq")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2j81l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfcwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhlgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2r58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdhki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml0ek")
+}],
+"loop": true,
+"name": &"marche",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j81l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmiaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg5f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cturx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ivjp")
+}],
+"loop": true,
+"name": &"marche2",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmiaq"]
+size = Vector2(26, 43)
+
+[node name="maga_bot" type="CharacterBody2D"]
+script = ExtResource("1_qfcwe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2j81l")
+animation = &"marche2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_cmiaq")

@@ -1,9 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxqp780mlsrhu"]
+[gd_scene load_steps=11 format=3 uid="uid://cxqp780mlsrhu"]
 
 [ext_resource type="Script" uid="uid://csu6sb4fv2oqi" path="res://assets/pingouin.gd" id="1_bu78e"]
 [ext_resource type="Texture2D" uid="uid://bhnseo3pih0fp" path="res://pingouin/PINGUIN_DROITE-PISTOLET-1.png.png" id="2_mbuot"]
 [ext_resource type="Texture2D" uid="uid://cggmigfe7mh4o" path="res://pingouin/MATTHEW WALK 3.png" id="3_5amix"]
 [ext_resource type="Texture2D" uid="uid://bgp0rqvmv1gta" path="res://pingouin/pinguin_marche1 (1).png" id="3_h66u0"]
+[ext_resource type="Texture2D" uid="uid://b418jkiuylmhi" path="res://pingouin/PINGUIN_GAUCHE_3FRAMES (1).png" id="5_nfim0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx67k"]
+atlas = ExtResource("5_nfim0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w70q"]
+atlas = ExtResource("5_nfim0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euajf"]
+atlas = ExtResource("5_nfim0")
+region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_myj11"]
 animations = [{
@@ -20,6 +33,20 @@ animations = [{
 "loop": true,
 "name": &"marche",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx67k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w70q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euajf")
+}],
+"loop": true,
+"name": &"marche2",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu78e"]
@@ -31,8 +58,8 @@ script = ExtResource("1_bu78e")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, -27)
 sprite_frames = SubResource("SpriteFrames_myj11")
-animation = &"marche"
-frame_progress = 0.6781786
+animation = &"marche2"
+frame_progress = 0.93337494
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, -23)

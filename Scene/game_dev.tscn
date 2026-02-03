@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvysdv60nwq0v"]
+[gd_scene load_steps=6 format=3 uid="uid://cvysdv60nwq0v"]
 
 [ext_resource type="Script" uid="uid://n1d6ojjc6tw8" path="res://Scene/game_dev.gd" id="1_fwfla"]
+[ext_resource type="PackedScene" uid="uid://dkykr3htly062" path="res://assets/map.tscn" id="2_crvqk"]
+[ext_resource type="PackedScene" uid="uid://cxqp780mlsrhu" path="res://assets/pingouin.tscn" id="3_g420j"]
+[ext_resource type="PackedScene" uid="uid://c1uo7kt712qpl" path="res://assets/maga_fan.tscn" id="4_j2wrm"]
+[ext_resource type="PackedScene" uid="uid://cm1ay0w77j4dj" path="res://assets/ice_bot.tscn" id="5_axtot"]
 
 [node name="GameDev" type="Node2D"]
 script = ExtResource("1_fwfla")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("2_crvqk")]
+
+[node name="Pingouin" parent="." instance=ExtResource("3_g420j")]
+position = Vector2(3606, 1634)
+
+[node name="maga_fan" parent="." instance=ExtResource("4_j2wrm")]
+position = Vector2(2879, 1299)
+
+[node name="Ice_BOT" parent="." instance=ExtResource("5_axtot")]
+position = Vector2(3957, 1322)

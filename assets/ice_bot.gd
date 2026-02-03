@@ -16,9 +16,6 @@ func _physics_process(_delta):
 		# 2. On applique la vitesse
 		velocity = direction * SPEED
 		
-		# 3. On tourne le sprite (corrigé avec le bon nom de nœud)
-		$AnimatedSprite2D.flip_h = direction.x < 0
-		
 		# On lance l'animation de marche du méchant
 		if $AnimatedSprite2D.animation != "default":
 			$AnimatedSprite2D.play("default")
