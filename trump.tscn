@@ -1,0 +1,130 @@
+[gd_scene load_steps=26 format=3 uid="uid://cnlbxvjl6cflk"]
+
+[ext_resource type="Texture2D" uid="uid://v2y1b0b75pt6" path="res://trump/Sprites/idle attaque/attaque 1.png" id="1_g0nso"]
+[ext_resource type="Script" uid="uid://866l6ajeviqb" path="res://trump.gd" id="1_yfv3d"]
+[ext_resource type="Texture2D" uid="uid://d0tg7iomugiat" path="res://trump/Sprites/idle attaque/attaque 2.png" id="2_yfv3d"]
+[ext_resource type="Texture2D" uid="uid://dpstdo7n3ur0t" path="res://trump/Sprites/idle pupitre/pupitre 1.png" id="3_h6wyq"]
+[ext_resource type="Texture2D" uid="uid://ovv7h5amdhcj" path="res://trump/Sprites/idle pupitre/pupitre 2.png" id="4_5f6d0"]
+[ext_resource type="Texture2D" uid="uid://br7ovahrwyu1f" path="res://trump/Sprites/idle pupitre/Pupitre 3.png" id="5_bikjm"]
+[ext_resource type="Texture2D" uid="uid://dbekw6fbf6s4w" path="res://trump/Sprites/idle mort/die 1.png" id="6_em0dc"]
+[ext_resource type="Texture2D" uid="uid://yujugxciq72r" path="res://trump/Sprites/idle mort/die 2.png" id="7_0v57q"]
+[ext_resource type="Texture2D" uid="uid://fab1c1f6l4r2" path="res://trump/Sprites/idle mort/die 3.png" id="8_mq8k6"]
+[ext_resource type="Texture2D" uid="uid://dy21013lnmsgo" path="res://trump/trump emote/ymca1.png" id="9_w7bjp"]
+[ext_resource type="Texture2D" uid="uid://n5kvwg685g1h" path="res://trump/trump emote/ymca2.png" id="10_o0p6b"]
+[ext_resource type="Texture2D" uid="uid://cdiwexxat68a2" path="res://trump/trump emote/ymca3.png" id="11_prj5t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe6qy"]
+atlas = ExtResource("1_g0nso")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cw3u"]
+atlas = ExtResource("2_yfv3d")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nch7"]
+atlas = ExtResource("3_h6wyq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqbv8"]
+atlas = ExtResource("4_5f6d0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o2nf"]
+atlas = ExtResource("5_bikjm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smj2g"]
+atlas = ExtResource("6_em0dc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_canog"]
+atlas = ExtResource("7_0v57q")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehmdt"]
+atlas = ExtResource("8_mq8k6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv3r5"]
+atlas = ExtResource("9_w7bjp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etsih"]
+atlas = ExtResource("10_o0p6b")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qbap"]
+atlas = ExtResource("11_prj5t")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kunbk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe6qy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cw3u")
+}],
+"loop": true,
+"name": &"attaque",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nch7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqbv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o2nf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smj2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_canog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehmdt")
+}],
+"loop": true,
+"name": &"mort",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv3r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etsih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qbap")
+}],
+"loop": true,
+"name": &"victoire",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_es8jo"]
+size = Vector2(31, 58)
+
+[node name="trump_boss" type="CharacterBody2D"]
+script = ExtResource("1_yfv3d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kunbk")
+animation = &"idle"
+frame_progress = 0.9612908
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_es8jo")

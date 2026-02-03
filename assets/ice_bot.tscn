@@ -38,7 +38,7 @@ size = Vector2(31, 48)
 [node name="Ice_BOT" type="CharacterBody2D"]
 script = ExtResource("1_vekgv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["ennemis"]]
 position = Vector2(0, -30)
 sprite_frames = SubResource("SpriteFrames_sjvwd")
 animation = &"marche"

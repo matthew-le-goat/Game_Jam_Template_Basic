@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://qbqu5nu2hj8"]
+
+[ext_resource type="Script" uid="uid://b5c2pco3efn2a" path="res://balle.gd" id="1_4weii"]
+[ext_resource type="Texture2D" uid="uid://dq3aosoyxxra" path="res://balle/SPICY_BULLET.png" id="2_ug3kc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcpgv"]
+radius = 12.999522
+height = 63.997646
+
+[node name="balle" type="Area2D"]
+script = ExtResource("1_4weii")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ug3kc")
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9.999999, 7.450581e-09)
+rotation = -1.5793715
+shape = SubResource("CapsuleShape2D_pcpgv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -90,7 +90,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmiaq"]
 size = Vector2(26, 43)
 
-[node name="maga_bot" type="CharacterBody2D"]
+[node name="maga_bot" type="CharacterBody2D" groups=["ennemis"]]
 script = ExtResource("1_qfcwe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
